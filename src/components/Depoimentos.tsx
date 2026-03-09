@@ -1,5 +1,7 @@
+'use client';
 import { PERSONAL } from '@/config/contato';
 import { Depoimento } from '@/types';
+import { useInView } from '@/hooks/useInView';
 
 // TODO: substituir por depoimentos reais com autorizacao dos alunos
 const depoimentos: Depoimento[] = [
@@ -24,30 +26,45 @@ const depoimentos: Depoimento[] = [
   },
 ];
 
+const cardDelays = ['delay-100', 'delay-200', 'delay-300'];
+
 function getInicial(nome: string): string {
   return nome.charAt(0).toUpperCase();
 }
 
 export default function Depoimentos() {
+  const { ref: sectionRef, isInView } = useInView();
+
   return (
-    <section id="depoimentos" className="py-section bg-background">
+    <section
+      id="depoimentos"
+      className="py-section bg-background"
+      ref={sectionRef as React.RefObject<HTMLElement>}
+    >
       <div className="container-page">
         {/* Titulo da secao */}
         <div className="text-center mb-12">
-          <h2 className="font-display text-section text-white uppercase">
+          <h2
+            className={`font-display text-section text-white uppercase will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+          >
             Quem já{' '}
             <span className="text-accent">transformou</span>
           </h2>
         </div>
 
-        {/* Desktop: grid 3 colunas | Mobile: scroll horizontal */}
+        {/* Desktop: grid 3 colunas com stagger */}
         <div className="hidden md:grid md:grid-cols-3 gap-6">
-          {depoimentos.map((dep) => (
-            <DepoimentoCard key={dep.id} depoimento={dep} />
+          {depoimentos.map((dep, index) => (
+            <div
+              key={dep.id}
+              className={`will-animate${isInView ? ` animate-fadeInUp ${cardDelays[index] ?? 'delay-300'}` : ''}`}
+            >
+              <DepoimentoCard depoimento={dep} />
+            </div>
           ))}
         </div>
 
-        {/* Mobile: scroll horizontal com snap */}
+        {/* Mobile: scroll horizontal com snap — sem animação para não interferir no scroll nativo */}
         <div className="flex md:hidden overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-4 px-4">
           {depoimentos.map((dep) => (
             <div

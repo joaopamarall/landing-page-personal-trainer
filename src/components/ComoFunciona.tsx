@@ -1,7 +1,9 @@
+'use client';
 import { gerarUrlWhatsApp } from '@/config/contato';
 import { Botao } from '@/components/ui/Botao';
 import { IconWhatsapp } from '@/components/icons/IconWhatsapp';
 import { ArrowRight } from 'lucide-react';
+import { useInView } from '@/hooks/useInView';
 
 const passos = [
   {
@@ -9,28 +11,39 @@ const passos = [
     titulo: 'Fale comigo',
     descricao:
       'Manda uma mensagem no WhatsApp. Sem compromisso. Vou entender seu objetivo e responder na hora.',
+    delay: 'delay-100',
   },
   {
     numero: '02',
     titulo: 'Receba seu treino',
     descricao:
       'Monto um treino 100% para você — baseado no seu nível, objetivo e rotina de vida.',
+    delay: 'delay-300',
   },
   {
     numero: '03',
     titulo: 'Comece e evolua',
     descricao:
       'Você treina. Eu acompanho. O resultado vai aparecer no espelho.',
+    delay: 'delay-500',
   },
 ];
 
 export default function ComoFunciona() {
+  const { ref: sectionRef, isInView } = useInView();
+
   return (
-    <section id="como-funciona" className="py-section bg-surface">
+    <section
+      id="como-funciona"
+      className="py-section bg-surface"
+      ref={sectionRef as React.RefObject<HTMLElement>}
+    >
       <div className="container-page">
         {/* Titulo da secao */}
         <div className="text-center mb-12">
-          <h2 className="font-display text-section text-white uppercase">
+          <h2
+            className={`font-display text-section text-white uppercase will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+          >
             Começar é mais simples do que{' '}
             <span className="text-accent">você imagina</span>
           </h2>
@@ -39,7 +52,10 @@ export default function ComoFunciona() {
         {/* Grid de passos */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {passos.map((passo, index) => (
-            <div key={passo.numero} className="relative">
+            <div
+              key={passo.numero}
+              className={`relative will-animate${isInView ? ` animate-fadeInUp ${passo.delay}` : ''}`}
+            >
               {/* Seta separadora — apenas em desktop, entre os passos */}
               {index < passos.length - 1 && (
                 <div className="hidden md:flex absolute top-8 -right-4 z-10 text-accent/40">

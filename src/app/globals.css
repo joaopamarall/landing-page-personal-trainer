@@ -2,6 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =====================================================
+   KEYFRAMES
+   ===================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(232, 255, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(232, 255, 0, 0.5);
+  }
+}
+
+/* =====================================================
+   CLASSES UTILITÁRIAS DE ANIMAÇÃO
+   ===================================================== */
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease forwards;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+/* Estado inicial — invisível antes de animar */
+.will-animate {
+  opacity: 0;
+}
+
+/* Delays para efeito stagger */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* =====================================================
+   RESPEITAR prefers-reduced-motion
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fadeInUp,
+  .animate-fadeIn,
+  .animate-scaleIn,
+  .animate-glowPulse {
+    animation: none;
+  }
+
+  .will-animate {
+    opacity: 1;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

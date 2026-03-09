@@ -1,9 +1,11 @@
+'use client';
 import Image from 'next/image';
 import { PERSONAL, gerarUrlWhatsApp } from '@/config/contato';
 import { Badge } from '@/components/ui/Badge';
 import { Botao } from '@/components/ui/Botao';
 import { IconWhatsapp } from '@/components/icons/IconWhatsapp';
 import { Check } from 'lucide-react';
+import { useInView } from '@/hooks/useInView';
 
 const diferenciais = [
   'Treino individualizado',
@@ -13,14 +15,24 @@ const diferenciais = [
   `Atendimento presencial em ${PERSONAL.cidade}`,
 ];
 
+const delaysPorIndice = ['delay-100', 'delay-200', 'delay-300', 'delay-400', 'delay-500'];
+
 export default function Sobre() {
+  const { ref: sectionRef, isInView } = useInView();
+
   return (
-    <section id="sobre" className="py-section bg-surface">
+    <section
+      id="sobre"
+      className="py-section bg-surface"
+      ref={sectionRef as React.RefObject<HTMLElement>}
+    >
       <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Coluna esquerda: Foto de perfil */}
           <div className="order-2 lg:order-1">
-            <div className="relative w-full aspect-[3/4] max-w-sm mx-auto lg:max-w-none rounded-card overflow-hidden">
+            <div
+              className={`relative w-full aspect-[3/4] max-w-sm mx-auto lg:max-w-none rounded-card overflow-hidden will-animate${isInView ? ' animate-scaleIn' : ''}`}
+            >
               <Image
                 src="/images/personal-perfil.jpeg"
                 alt={`${PERSONAL.nome}, personal trainer em ${PERSONAL.cidade}`}
@@ -34,12 +46,16 @@ export default function Sobre() {
 
           {/* Coluna direita: Texto */}
           <div className="order-1 lg:order-2">
-            <h2 className="font-display text-section text-white uppercase mb-6">
+            <h2
+              className={`font-display text-section text-white uppercase mb-6 will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+            >
               Quem é{' '}
               <span className="text-accent">{PERSONAL.nome}</span>
             </h2>
 
-            <div className="space-y-4 text-white/80 font-sans mb-8">
+            <div
+              className={`space-y-4 text-white/80 font-sans mb-8 will-animate${isInView ? ' animate-fadeInUp delay-100' : ''}`}
+            >
               <p>
                 Sou {PERSONAL.nomeDisplay}, personal trainer em {PERSONAL.cidade} com{' '}
                 <span className="text-white font-medium">{PERSONAL.anosExperiencia} anos de experiência</span>{' '}
@@ -61,8 +77,11 @@ export default function Sobre() {
 
             {/* Lista de diferenciais */}
             <ul className="space-y-3 mb-8">
-              {diferenciais.map((item) => (
-                <li key={item} className="flex items-start gap-3">
+              {diferenciais.map((item, index) => (
+                <li
+                  key={item}
+                  className={`flex items-start gap-3 will-animate${isInView ? ` animate-fadeInUp ${delaysPorIndice[index] ?? 'delay-500'}` : ''}`}
+                >
                   <Check
                     className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
                     aria-hidden="true"
@@ -73,7 +92,9 @@ export default function Sobre() {
             </ul>
 
             {/* Badge CREF */}
-            <div className="flex flex-wrap gap-4 items-center">
+            <div
+              className={`flex flex-wrap gap-4 items-center will-animate${isInView ? ' animate-fadeIn delay-400' : ''}`}
+            >
               <Badge variante="neutral">
                 CREF {PERSONAL.cref} — Profissional certificado
               </Badge>

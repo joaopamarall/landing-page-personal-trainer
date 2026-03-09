@@ -1,13 +1,21 @@
+'use client';
 import { PERSONAL, CONTATO, gerarUrlWhatsApp } from '@/config/contato';
 import { IconWhatsapp } from '@/components/icons/IconWhatsapp';
 import { IconInstagram } from '@/components/icons/IconInstagram';
+import { useInView } from '@/hooks/useInView';
 
 export default function Footer() {
   const anoAtual = new Date().getFullYear();
+  const { ref: footerRef, isInView } = useInView();
 
   return (
-    <footer className="bg-background border-t border-surface-border">
-      <div className="container-page py-8">
+    <footer
+      className="bg-background border-t border-surface-border"
+      ref={footerRef as React.RefObject<HTMLElement>}
+    >
+      <div
+        className={`container-page py-8 will-animate${isInView ? ' animate-fadeIn' : ''}`}
+      >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Copyright e CREF */}
           <div className="text-center sm:text-left">

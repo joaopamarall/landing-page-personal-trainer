@@ -1,11 +1,21 @@
+'use client';
 import { CONTATO } from '@/config/contato';
 import { IconInstagram } from '@/components/icons/IconInstagram';
+import { useInView } from '@/hooks/useInView';
 
 export default function RedesSociais() {
+  const { ref: sectionRef, isInView } = useInView();
+
   return (
-    <section id="redes-sociais" className="py-section bg-surface">
+    <section
+      id="redes-sociais"
+      className="py-section bg-surface"
+      ref={sectionRef as React.RefObject<HTMLElement>}
+    >
       <div className="container-page">
-        <div className="text-center max-w-2xl mx-auto">
+        <div
+          className={`text-center max-w-2xl mx-auto will-animate${isInView ? ' animate-fadeIn' : ''}`}
+        >
           {/* Titulo */}
           <h2 className="font-display text-section text-white uppercase mb-4">
             Me siga e acompanhe a{' '}
