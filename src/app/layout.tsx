@@ -17,14 +17,14 @@ const fontSans = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://personalguinhovagner.com.br'),
-  title: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
+  title: 'Guinho Vagner — Personal Trainer',
   description: 'Treinos personalizados em Piraquara/PR. Emagreça, ganhe massa ou melhore sua saúde com o Guinho Vagner — 15 anos de experiência e 360+ alunos atendidos. Fale agora no WhatsApp!',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
+    title: 'Guinho Vagner — Personal Trainer',
     description: 'Treinos personalizados em Piraquara/PR. 15 anos de experiência, 360+ alunos atendidos. Fale agora no WhatsApp!',
     type: 'website',
     locale: 'pt_BR',
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: 'https://landing-page-personal-trainer-rho.vercel.app/images/og-image.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
+        alt: 'Guinho Vagner — Personal Trainer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
+    title: 'Guinho Vagner — Personal Trainer',
     description: 'Treinos personalizados em Piraquara/PR. 15 anos de experiência, 360+ alunos atendidos. Fale agora no WhatsApp!',
     // TODO: trocar para personalguinhovagner.com.br após DNS propagar
     images: ['https://landing-page-personal-trainer-rho.vercel.app/images/og-image.jpeg'],
