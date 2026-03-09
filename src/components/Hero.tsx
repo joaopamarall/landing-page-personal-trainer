@@ -13,7 +13,7 @@ export default function Hero() {
       {/* Foto de fundo — wallpaper */}
       <div className="absolute inset-0">
         <Image
-          src="/images/personal-hero.svg"
+          src="/images/personal-hero.jpeg"
           alt={`${PERSONAL.nome} personal trainer em ${PERSONAL.cidade}`}
           fill
           className="object-cover object-top"
