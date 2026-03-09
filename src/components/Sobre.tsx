@@ -26,6 +26,7 @@ export default function Sobre() {
                 alt={`${PERSONAL.nome}, personal trainer em ${PERSONAL.cidade}`}
                 fill
                 className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={85}
               />
             </div>
@@ -51,7 +52,9 @@ export default function Sobre() {
                 Por isso, quando decidi me tornar personal, jurei que cada aluno ia ter um treino pensado de verdade — não uma ficha genérica copiada da internet.
               </p>
               <p>
-                Hoje acompanho de perto cada resultado.{' '}
+                Hoje são{' '}
+                <span className="text-white font-medium">{PERSONAL.totalAlunos} alunos cadastrados</span>{' '}
+                e acompanho de perto cada resultado.{' '}
                 <span className="text-accent font-medium">Seu objetivo vira o meu objetivo.</span>
               </p>
             </div>

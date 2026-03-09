@@ -13,7 +13,7 @@ export default function Servicos() {
         <div className="text-center mb-12">
           <h2 className="font-display text-section text-white uppercase">
             Escolha como quer{' '}
-            <span className="text-accent">comecar</span>
+            <span className="text-accent">começar</span>
           </h2>
         </div>
 
@@ -71,7 +71,7 @@ export default function Servicos() {
                 )}
                 target="_blank"
                 className="w-full justify-center"
-                ariaLabel={`Contratar ${servico.titulo} com ${SERVICOS[0] ? 'Guinho' : ''} via WhatsApp`}
+                ariaLabel={`Contratar ${servico.titulo} com Guinho via WhatsApp`}
               >
                 <IconWhatsapp className="w-4 h-4" />
                 {servico.cta}

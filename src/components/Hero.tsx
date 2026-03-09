@@ -13,10 +13,11 @@ export default function Hero() {
       {/* Foto de fundo — wallpaper */}
       <div className="absolute inset-0">
         <Image
-          src="/images/personal-hero.jpeg"
+          src="/images/personal-hero.svg"
           alt={`${PERSONAL.nome} personal trainer em ${PERSONAL.cidade}`}
           fill
           className="object-cover object-top"
+          sizes="100vw"
           priority
           quality={85}
         />
@@ -42,7 +43,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Overlay camada 2 — profundidade inferior (vertical) — todas as telas */}
+      {/* Overlay camada 2 — profundidade inferior */}
       <div
         className="absolute inset-0"
         style={{
@@ -102,18 +103,20 @@ export default function Hero() {
             </Botao>
           </div>
 
-          {/* Credenciais */}
+          {/* Credenciais — 3 números */}
           <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-sm font-sans">
+            <div className="flex items-center gap-2">
+              <span className="text-accent font-bold text-lg font-display">
+                {PERSONAL.totalAlunos}
+              </span>
+              <span className="text-text-secondary">alunos cadastrados</span>
+            </div>
+            <span className="text-surface-border hidden sm:block">|</span>
             <div className="flex items-center gap-2">
               <span className="text-accent font-bold text-lg font-display">
                 {PERSONAL.anosExperiencia}
               </span>
               <span className="text-text-secondary">anos de experiência</span>
-            </div>
-            <span className="text-surface-border hidden sm:block">|</span>
-            <div className="flex items-center gap-2">
-              <span className="text-text-secondary">Em academia desde</span>
-              <span className="text-white font-medium">2011</span>
             </div>
             <span className="text-surface-border hidden sm:block">|</span>
             <div className="flex items-center gap-2">

@@ -11,7 +11,7 @@ export const PERSONAL = {
   cidade: 'Piraquara',                      // Cidade de atuação (importante para SEO local)
   estado: 'PR',                             // Sigla do estado
   anosExperiencia: '15',                    // Em academia desde 2011
-  totalAlunos: '[TOTAL_ALUNOS]',            // TODO: substituir pelo numero real (ex: "100+")
+  totalAlunos: '360+',                      // Ativos (175) + Inativos (185) = 360 cadastrados
 } as const;
 
 export const CONTATO = {
@@ -34,7 +34,7 @@ export const SERVICOS = [
     duracao: '~2 meses',
     renovavel: true,
     acompanhamento: false,
-    preco: '',                              // string vazia = nao exibir preco (TODO: substituir quando definido)
+    preco: '',                              // Preço não exibido no site
     cta: 'Quero meu plano',
     destaque: false,
     beneficios: [
@@ -52,7 +52,7 @@ export const SERVICOS = [
     duracao: 'Mensal',
     renovavel: true,
     acompanhamento: true,
-    preco: '',                              // string vazia = nao exibir preco (TODO: substituir quando definido)
+    preco: '',                              // Preço não exibido no site
     cta: 'Quero acompanhamento',
     destaque: true,                         // Exibe badge "Mais Completo"
     beneficios: [

@@ -25,7 +25,7 @@ export default function Header() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-page flex items-center justify-between h-16 md:h-18">
+      <div className="container-page flex items-center justify-between h-16 md:h-20">
         {/* Logo / Nome */}
         <a
           href="#hero"
