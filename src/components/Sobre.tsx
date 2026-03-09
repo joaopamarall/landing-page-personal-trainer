@@ -6,11 +6,11 @@ import { IconWhatsapp } from '@/components/icons/IconWhatsapp';
 import { Check } from 'lucide-react';
 
 const diferenciais = [
-  'Treino 100% individualizado',
+  'Treino individualizado',
   'Montado para o seu corpo, nível e rotina',
   'Suporte direto pelo WhatsApp',
   'Revisão periódica do treino',
-  `Atendimento em ${PERSONAL.cidade}`,
+  `Atendimento presencial em ${PERSONAL.cidade}`,
 ];
 
 export default function Sobre() {

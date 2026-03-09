@@ -38,8 +38,8 @@ export const SERVICOS = [
     cta: 'Quero meu plano',
     destaque: false,
     beneficios: [
-      'Treino 100% personalizado',
-      'Montado em até 48h após o contato',
+      'Treino personalizado',
+      'Entregue em até 3 dias úteis após o contato',
       'Válido por aproximadamente 2 meses',
       'Renovação disponível quando necessário',
       'Suporte via WhatsApp',

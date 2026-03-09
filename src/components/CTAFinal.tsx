@@ -47,7 +47,7 @@ export default function CTAFinal() {
 
           {/* Nota de sem compromisso */}
           <p className="text-text-secondary font-sans text-sm mt-6">
-            Sem compromisso. Respondo na hora.
+            Sem compromisso. Faça sua avaliação já.
           </p>
         </div>
       </div>

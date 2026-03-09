@@ -23,8 +23,9 @@ export default function Servicos() {
             <Card key={servico.id} destaque={servico.destaque}>
               {/* Badge de destaque */}
               {servico.destaque && (
-                <div className="mb-4">
+                <div className="mb-4 flex flex-wrap gap-2">
                   <Badge variante="accent">Mais Completo</Badge>
+                  <Badge variante="accent">Presencial</Badge>
                 </div>
               )}
 
