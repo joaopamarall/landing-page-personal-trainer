@@ -41,20 +41,18 @@ export default function CTAFinal() {
             </p>
           </div>
 
-          {/* CTA principal — glow pulsante quando na viewport */}
-          <div className={isInView ? 'animate-glowPulse inline-block rounded-sm' : ''}>
-            <Botao
-              variante="primary"
-              tamanho="lg"
-              href={gerarUrlWhatsApp('Oi Guinho! Estou pronto para começar a treinar. Quero saber mais sobre os seus planos!')}
-              target="_blank"
-              ariaLabel="Falar com Guinho agora no WhatsApp para começar a treinar"
-              className="text-xl px-10 py-5"
-            >
-              <IconWhatsapp className="w-6 h-6" />
-              Falar agora no WhatsApp
-            </Botao>
-          </div>
+          {/* CTA principal */}
+          <Botao
+            variante="primary"
+            tamanho="lg"
+            href={gerarUrlWhatsApp('Oi Guinho! Estou pronto para começar a treinar. Quero saber mais sobre os seus planos!')}
+            target="_blank"
+            ariaLabel="Falar com Guinho agora no WhatsApp para começar a treinar"
+            className={`text-xl px-10 py-5${isInView ? ' animate-glowPulse' : ''}`}
+          >
+            <IconWhatsapp className="w-6 h-6" />
+            Falar agora no WhatsApp
+          </Botao>
 
           {/* Nota de sem compromisso */}
           <p className="text-text-secondary font-sans text-sm mt-6">
