@@ -18,21 +18,21 @@ const fontSans = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://personalguinhovagner.com.br'),
   title: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
-  description: 'Personal trainer em Piraquara/PR com 15 anos de experiência. Treinos 100% personalizados para emagrecer, ganhar massa ou melhorar a saúde. CREF 028414-G/PR. Fale no WhatsApp!',
+  description: 'Treinos 100% personalizados em Piraquara/PR. Emagreça, ganhe massa ou melhore sua saúde com o Guinho Vagner — 15 anos de experiência, 360+ alunos. Fale agora no WhatsApp!',
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
     title: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
-    description: 'Personal trainer em Piraquara/PR com 15 anos de experiência. Treinos 100% personalizados. Fale no WhatsApp!',
+    description: 'Treinos 100% personalizados em Piraquara/PR. 15 anos de experiência, 360+ alunos. Fale agora no WhatsApp!',
     type: 'website',
     locale: 'pt_BR',
     url: 'https://personalguinhovagner.com.br',
     siteName: 'Guinho Vagner Personal Trainer',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://personalguinhovagner.com.br/images/og-image.jpeg',
         width: 1200,
         height: 630,
         alt: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Guinho Vagner — Personal Trainer em Piraquara/PR',
-    description: 'Treinos 100% personalizados para emagrecer, ganhar massa ou melhorar a saúde. Fale no WhatsApp!',
-    images: ['/images/og-image.jpg'],
+    description: 'Treinos 100% personalizados em Piraquara/PR. 15 anos de experiência, 360+ alunos. Fale agora no WhatsApp!',
+    images: ['https://personalguinhovagner.com.br/images/og-image.jpeg'],
   },
   alternates: {
     canonical: 'https://personalguinhovagner.com.br',
@@ -86,7 +86,7 @@ const schemaLocalBusiness = {
     'https://wa.me/5541997340600',
   ],
   priceRange: '$$',
-  image: 'https://personalguinhovagner.com.br/images/og-image.jpg',
+  image: 'https://personalguinhovagner.com.br/images/og-image.jpeg',
 };
 
 const schemaPerson = {
