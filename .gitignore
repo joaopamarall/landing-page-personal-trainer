@@ -27,3 +27,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# gerados automaticamente no build (next-sitemap)
+public/sitemap*.xml
+public/robots.txt
+
+# typescript build info
+tsconfig.tsbuildinfo
