@@ -70,7 +70,7 @@ export default function Hero() {
           </h1>
 
           {/* Tagline */}
-          <p className="text-text-secondary text-lg md:text-xl mb-4 font-sans">
+          <p className="text-accent text-lg md:text-xl mb-4 font-sans font-medium">
             Personal trainer em {PERSONAL.cidade} — treinos individualizados para quem quer resultado de verdade.
           </p>
 

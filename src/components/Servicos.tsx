@@ -7,7 +7,7 @@ import { Check } from 'lucide-react';
 
 export default function Servicos() {
   return (
-    <section id="servicos" className="py-section bg-surface">
+    <section id="servicos" className="py-section bg-background">
       <div className="container-page">
         {/* Titulo da secao */}
         <div className="text-center mb-12">

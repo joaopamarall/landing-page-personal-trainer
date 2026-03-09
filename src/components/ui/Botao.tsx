@@ -13,11 +13,11 @@ interface BotaoProps {
 
 const varianteClasses: Record<VarianteBotao, string> = {
   primary:
-    'bg-accent text-background font-bold uppercase tracking-wider hover:bg-accent-hover transition-colors duration-200 inline-flex items-center gap-2',
+    'bg-accent text-background font-bold uppercase tracking-wider hover:brightness-110 hover:scale-[1.02] hover:shadow-accent-glow active:scale-100 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center gap-2',
   secondary:
-    'border-2 border-accent text-accent hover:bg-accent hover:text-background transition-colors duration-200 inline-flex items-center gap-2',
+    'border-2 border-accent text-accent hover:bg-accent hover:text-background active:scale-95 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background inline-flex items-center gap-2',
   ghost:
-    'text-white hover:text-accent transition-colors duration-200 underline-offset-4 hover:underline inline-flex items-center gap-2',
+    'text-white hover:text-accent transition-colors duration-200 underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent inline-flex items-center gap-2',
 };
 
 const tamanhoClasses: Record<TamanhoBotao, string> = {

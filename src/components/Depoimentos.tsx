@@ -30,7 +30,7 @@ function getInicial(nome: string): string {
 
 export default function Depoimentos() {
   return (
-    <section id="depoimentos" className="py-section bg-surface">
+    <section id="depoimentos" className="py-section bg-background">
       <div className="container-page">
         {/* Titulo da secao */}
         <div className="text-center mb-12">

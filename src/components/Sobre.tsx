@@ -15,7 +15,7 @@ const diferenciais = [
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="py-section bg-background">
+    <section id="sobre" className="py-section bg-surface">
       <div className="container-page">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Coluna esquerda: Foto de perfil */}

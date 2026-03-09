@@ -35,10 +35,11 @@ const config: Config = {
         container: '1200px', // Largura maxima do conteudo
       },
       borderRadius: {
-        card: '1rem', // Border radius padrao dos cards
+        card: '0.5rem', // Border radius dos cards (8px — fitness premium angular)
       },
       boxShadow: {
         'accent-glow': '0 0 30px rgba(232, 255, 0, 0.15)', // Brilho neon sutil
+        'card-hover': '0 8px 32px rgba(0,0,0,0.4)',        // Sombra de hover dos cards
       },
     },
   },

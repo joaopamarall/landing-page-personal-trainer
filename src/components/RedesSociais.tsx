@@ -3,7 +3,7 @@ import { IconInstagram } from '@/components/icons/IconInstagram';
 
 export default function RedesSociais() {
   return (
-    <section id="redes-sociais" className="py-section bg-background">
+    <section id="redes-sociais" className="py-section bg-surface">
       <div className="container-page">
         <div className="text-center max-w-2xl mx-auto">
           {/* Titulo */}

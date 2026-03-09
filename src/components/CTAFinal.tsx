@@ -6,7 +6,7 @@ export default function CTAFinal() {
   return (
     <section
       id="contato"
-      className="py-section bg-surface relative overflow-hidden"
+      className="py-section bg-background relative overflow-hidden"
     >
       {/* Efeito de brilho neon no background */}
       <div

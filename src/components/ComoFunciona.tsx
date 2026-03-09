@@ -26,7 +26,7 @@ const passos = [
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="py-section bg-background">
+    <section id="como-funciona" className="py-section bg-surface">
       <div className="container-page">
         {/* Titulo da secao */}
         <div className="text-center mb-12">
