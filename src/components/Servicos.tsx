@@ -21,13 +21,18 @@ export default function Servicos() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {SERVICOS.map((servico) => (
             <Card key={servico.id} destaque={servico.destaque}>
-              {/* Badge de destaque */}
-              {servico.destaque && (
-                <div className="mb-4 flex flex-wrap gap-2">
-                  <Badge variante="accent">Mais Completo</Badge>
-                  <Badge variante="accent">Presencial</Badge>
-                </div>
-              )}
+              {/* Badges */}
+              <div className="mb-4 flex flex-wrap gap-2">
+                {!servico.destaque && (
+                  <Badge variante="accent">Online</Badge>
+                )}
+                {servico.destaque && (
+                  <>
+                    <Badge variante="accent">Mais Completo</Badge>
+                    <Badge variante="accent">Presencial</Badge>
+                  </>
+                )}
+              </div>
 
               {/* Titulo */}
               <h3 className="font-display text-2xl text-white uppercase mb-3">
