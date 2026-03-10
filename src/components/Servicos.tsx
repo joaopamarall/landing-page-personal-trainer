@@ -7,7 +7,7 @@ import { IconWhatsapp } from '@/components/icons/IconWhatsapp';
 import { Check } from 'lucide-react';
 import { useInView } from '@/hooks/useInView';
 
-const cardDelays = ['delay-100', 'delay-300'];
+const cardTransitionDelays = ['', 'delay-200'];
 
 export default function Servicos() {
   const { ref: sectionRef, isInView } = useInView();
@@ -22,7 +22,7 @@ export default function Servicos() {
         {/* Titulo da secao */}
         <div className="text-center mb-12">
           <h2
-            className={`font-display text-section text-white uppercase will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+            className={`font-display text-section text-white uppercase transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             Escolha como quer{' '}
             <span className="text-accent">começar</span>
@@ -34,7 +34,7 @@ export default function Servicos() {
           {SERVICOS.map((servico, index) => (
             <div
               key={servico.id}
-              className={`will-animate${isInView ? ` animate-scaleIn ${cardDelays[index] ?? 'delay-300'}` : ''}`}
+              className={`transition-[opacity,transform] duration-700 ease-out ${cardTransitionDelays[index] ?? ''} ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
             >
               <Card destaque={servico.destaque}>
                 {/* Badges */}

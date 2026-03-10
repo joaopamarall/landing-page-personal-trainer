@@ -14,7 +14,7 @@ export default function RedesSociais() {
     >
       <div className="container-page">
         <div
-          className={`text-center max-w-2xl mx-auto will-animate${isInView ? ' animate-fadeIn' : ''}`}
+          className={`text-center max-w-2xl mx-auto transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {/* Titulo */}
           <h2 className="font-display text-section text-white uppercase mb-4">

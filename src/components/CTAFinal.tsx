@@ -25,7 +25,7 @@ export default function CTAFinal() {
         <div className="text-center max-w-3xl mx-auto">
           {/* Headline */}
           <h2
-            className={`font-display text-section text-white uppercase mb-6 will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+            className={`font-display text-section text-white uppercase mb-6 transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             Pronto para{' '}
             <span className="text-accent">começar?</span>
@@ -33,7 +33,7 @@ export default function CTAFinal() {
 
           {/* Texto de apoio */}
           <div
-            className={`text-text-secondary font-sans text-lg mb-10 space-y-2 will-animate${isInView ? ' animate-fadeInUp delay-200' : ''}`}
+            className={`text-text-secondary font-sans text-lg mb-10 space-y-2 transition-[opacity,transform] duration-700 ease-out delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             <p>Não precisa estar em forma para começar.</p>
             <p className="text-white font-medium">
@@ -48,7 +48,7 @@ export default function CTAFinal() {
             href={gerarUrlWhatsApp('Oi Guinho! Estou pronto para começar a treinar. Quero saber mais sobre os seus planos!')}
             target="_blank"
             ariaLabel="Falar com Guinho agora no WhatsApp para começar a treinar"
-            className={`text-xl px-10 py-5${isInView ? ' animate-glowPulse' : ''}`}
+            className="text-xl px-10 py-5 anim-glow"
           >
             <IconWhatsapp className="w-6 h-6" />
             Falar agora no WhatsApp

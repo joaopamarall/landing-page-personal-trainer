@@ -3,102 +3,45 @@
 @tailwind utilities;
 
 /* =====================================================
-   KEYFRAMES
+   KEYFRAMES — Hero (sempre visível ao carregar)
    ===================================================== */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-@keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+/* Classes do Hero — aplicadas diretamente, sem IntersectionObserver */
+.hero-fade { animation: fadeIn 0.7s ease both; }
+.hero-up   { animation: fadeInUp 0.6s ease both; }
 
+/* Animação contínua do botão CTA — mantém keyframe */
 @keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(232, 255, 0, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(232, 255, 0, 0.5);
-  }
+  0%, 100% { box-shadow: 0 0 20px rgba(232, 255, 0, 0.2); }
+  50%       { box-shadow: 0 0 40px rgba(232, 255, 0, 0.5); }
 }
 
-/* =====================================================
-   CLASSES UTILITÁRIAS DE ANIMAÇÃO
-   ===================================================== */
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease both;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.8s ease both;
-}
-
-.animate-scaleIn {
-  animation: scaleIn 0.5s ease both;
-}
-
-.animate-glowPulse {
+.anim-glow {
   animation: glowPulse 2.5s ease-in-out infinite;
-}
-
-/* Estado inicial — invisível antes de animar */
-.will-animate {
-  opacity: 0;
-}
-
-/* Delays para efeito stagger */
-.delay-100 {
-  animation-delay: 0.1s;
-}
-.delay-200 {
-  animation-delay: 0.2s;
-}
-.delay-300 {
-  animation-delay: 0.3s;
-}
-.delay-400 {
-  animation-delay: 0.4s;
-}
-.delay-500 {
-  animation-delay: 0.5s;
 }
 
 /* =====================================================
    RESPEITAR prefers-reduced-motion
    ===================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .animate-fadeInUp,
-  .animate-fadeIn,
-  .animate-scaleIn,
-  .animate-glowPulse {
+  .hero-fade,
+  .hero-up {
     animation: none;
+    opacity: 1;
+    transform: none;
   }
 
-  .will-animate {
-    opacity: 1;
+  .anim-glow {
+    animation: none;
   }
 }
 

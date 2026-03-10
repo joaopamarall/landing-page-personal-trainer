@@ -11,23 +11,22 @@ const passos = [
     titulo: 'Fale comigo',
     descricao:
       'Manda uma mensagem no WhatsApp. Sem compromisso. Vou entender seu objetivo e responder na hora.',
-    delay: 'delay-100',
   },
   {
     numero: '02',
     titulo: 'Receba seu treino',
     descricao:
       'Monto um treino 100% para você — baseado no seu nível, objetivo e rotina de vida.',
-    delay: 'delay-300',
   },
   {
     numero: '03',
     titulo: 'Comece e evolua',
     descricao:
       'Você treina. Eu acompanho. O resultado vai aparecer no espelho.',
-    delay: 'delay-500',
   },
 ];
+
+const stepDelays = ['', 'delay-200', 'delay-[400ms]'];
 
 export default function ComoFunciona() {
   const { ref: sectionRef, isInView } = useInView();
@@ -42,7 +41,7 @@ export default function ComoFunciona() {
         {/* Titulo da secao */}
         <div className="text-center mb-12">
           <h2
-            className={`font-display text-section text-white uppercase will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+            className={`font-display text-section text-white uppercase transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             Começar é mais simples do que{' '}
             <span className="text-accent">você imagina</span>
@@ -54,7 +53,7 @@ export default function ComoFunciona() {
           {passos.map((passo, index) => (
             <div
               key={passo.numero}
-              className={`relative will-animate${isInView ? ` animate-fadeInUp ${passo.delay}` : ''}`}
+              className={`relative transition-[opacity,transform] duration-700 ease-out ${stepDelays[index] ?? ''} ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
               {/* Seta separadora — apenas em desktop, entre os passos */}
               {index < passos.length - 1 && (

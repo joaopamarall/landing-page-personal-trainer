@@ -15,7 +15,7 @@ const diferenciais = [
   `Atendimento presencial em ${PERSONAL.cidade}`,
 ];
 
-const delaysPorIndice = ['delay-100', 'delay-200', 'delay-300', 'delay-400', 'delay-500'];
+const delays = ['delay-150', 'delay-200', 'delay-300', 'delay-[400ms]', 'delay-500'];
 
 export default function Sobre() {
   const { ref: sectionRef, isInView } = useInView();
@@ -31,7 +31,7 @@ export default function Sobre() {
           {/* Coluna esquerda: Foto de perfil */}
           <div className="order-2 lg:order-1">
             <div
-              className={`relative w-full aspect-[3/4] max-w-sm mx-auto lg:max-w-none rounded-card overflow-hidden will-animate${isInView ? ' animate-scaleIn' : ''}`}
+              className={`relative w-full aspect-[3/4] max-w-sm mx-auto lg:max-w-none rounded-card overflow-hidden transition-[opacity,transform] duration-1000 ease-out ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-[0.97]'}`}
             >
               <Image
                 src="/images/personal-perfil.jpeg"
@@ -47,14 +47,14 @@ export default function Sobre() {
           {/* Coluna direita: Texto */}
           <div className="order-1 lg:order-2">
             <h2
-              className={`font-display text-section text-white uppercase mb-6 will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+              className={`font-display text-section text-white uppercase mb-6 transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
               Quem é{' '}
               <span className="text-accent">{PERSONAL.nome}</span>
             </h2>
 
             <div
-              className={`space-y-4 text-white/80 font-sans mb-8 will-animate${isInView ? ' animate-fadeInUp delay-100' : ''}`}
+              className={`space-y-4 text-white/80 font-sans mb-8 transition-[opacity,transform] duration-700 ease-out delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
               <p>
                 Sou {PERSONAL.nomeDisplay}, personal trainer em {PERSONAL.cidade} com{' '}
@@ -80,7 +80,7 @@ export default function Sobre() {
               {diferenciais.map((item, index) => (
                 <li
                   key={item}
-                  className={`flex items-start gap-3 will-animate${isInView ? ` animate-fadeInUp ${delaysPorIndice[index] ?? 'delay-500'}` : ''}`}
+                  className={`flex items-start gap-3 transition-[opacity,transform] duration-700 ease-out ${delays[index] ?? 'delay-500'} ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 >
                   <Check
                     className="w-5 h-5 text-accent flex-shrink-0 mt-0.5"
@@ -93,7 +93,7 @@ export default function Sobre() {
 
             {/* Badge CREF */}
             <div
-              className={`flex flex-wrap gap-4 items-center will-animate${isInView ? ' animate-fadeIn delay-400' : ''}`}
+              className={`flex flex-wrap gap-4 items-center transition-[opacity,transform] duration-700 ease-out delay-[400ms] ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
               <Badge variante="neutral">
                 CREF {PERSONAL.cref} — Profissional certificado

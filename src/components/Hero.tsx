@@ -57,32 +57,32 @@ export default function Hero() {
       <div className="relative z-10 container-page py-20">
         <div className="max-w-xl lg:max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
           {/* Badge de localizacao */}
-          <div className="mb-6 flex justify-center lg:justify-start animate-fadeIn">
+          <div className="mb-6 flex justify-center lg:justify-start hero-fade">
             <Badge variante="accent">
               Personal Trainer | {PERSONAL.cidade} — {PERSONAL.estado}
             </Badge>
           </div>
 
           {/* H1 principal */}
-          <h1 className="font-display text-hero text-white uppercase mb-6 leading-none animate-fadeInUp delay-100">
+          <h1 className="font-display text-hero text-white uppercase mb-6 leading-none hero-up" style={{ animationDelay: '0.1s' }}>
             Chega de treino que não dá resultado.{' '}
             <span className="text-accent">Vou montar o seu.</span>
           </h1>
 
           {/* Tagline */}
-          <p className="text-accent text-lg md:text-xl mb-4 font-sans font-medium animate-fadeInUp delay-200">
+          <p className="text-accent text-lg md:text-xl mb-4 font-sans font-medium hero-up" style={{ animationDelay: '0.2s' }}>
             Personal trainer em {PERSONAL.cidade} — treinos individualizados para quem quer resultado de verdade.
           </p>
 
           {/* Descricao */}
-          <div className="text-white/80 text-base md:text-lg mb-8 space-y-2 font-sans animate-fadeInUp delay-300">
+          <div className="text-white/80 text-base md:text-lg mb-8 space-y-2 font-sans hero-up" style={{ animationDelay: '0.3s' }}>
             <p>Não importa se você quer emagrecer, ganhar massa ou se sentir melhor.</p>
             <p>Eu monto o treino ideal para o seu corpo e o seu objetivo.</p>
             <p className="font-medium text-white">Você faz. Eu oriento. O resultado aparece.</p>
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 mb-12 animate-fadeInUp delay-400">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 mb-12 hero-up" style={{ animationDelay: '0.4s' }}>
             <Botao
               variante="primary"
               tamanho="lg"
@@ -104,7 +104,7 @@ export default function Hero() {
           </div>
 
           {/* Credenciais — 3 números */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-sm font-sans animate-fadeInUp delay-500">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-6 text-sm font-sans hero-up" style={{ animationDelay: '0.5s' }}>
             <div className="flex items-center gap-2">
               <span className="text-accent font-bold text-lg font-display">
                 {PERSONAL.totalAlunos}

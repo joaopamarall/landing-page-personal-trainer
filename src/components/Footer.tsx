@@ -14,7 +14,7 @@ export default function Footer() {
       ref={footerRef as React.RefObject<HTMLElement>}
     >
       <div
-        className={`container-page py-8 will-animate${isInView ? ' animate-fadeIn' : ''}`}
+        className={`container-page py-8 transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
       >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Copyright e CREF */}

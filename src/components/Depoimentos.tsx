@@ -26,7 +26,7 @@ const depoimentos: Depoimento[] = [
   },
 ];
 
-const cardDelays = ['delay-100', 'delay-200', 'delay-300'];
+const cardDelays = ['', 'delay-200', 'delay-[400ms]'];
 
 function getInicial(nome: string): string {
   return nome.charAt(0).toUpperCase();
@@ -45,7 +45,7 @@ export default function Depoimentos() {
         {/* Titulo da secao */}
         <div className="text-center mb-12">
           <h2
-            className={`font-display text-section text-white uppercase will-animate${isInView ? ' animate-fadeInUp' : ''}`}
+            className={`font-display text-section text-white uppercase transition-[opacity,transform] duration-700 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
             Quem já{' '}
             <span className="text-accent">transformou</span>
@@ -57,7 +57,7 @@ export default function Depoimentos() {
           {depoimentos.map((dep, index) => (
             <div
               key={dep.id}
-              className={`will-animate${isInView ? ` animate-fadeInUp ${cardDelays[index] ?? 'delay-300'}` : ''}`}
+              className={`transition-[opacity,transform] duration-700 ease-out ${cardDelays[index] ?? ''} ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             >
               <DepoimentoCard depoimento={dep} />
             </div>
